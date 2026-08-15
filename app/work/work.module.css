@@ -1,0 +1,67 @@
+.page { --line: rgba(255,255,255,.28); min-height: 100vh; overflow: hidden; background: #050505; color: #f5f3ee; }
+.hero { min-height: 460px; padding: 104px 30px 28px; display: flex; flex-direction: column; justify-content: space-between; }
+.eyebrow, .heroFooter { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.hero h1 { margin: auto 0 0; font-size: clamp(64px, 7vw, 108px); font-weight: 900; letter-spacing: -.07em; line-height: .82; text-transform: uppercase; }
+.period { color: #e9ff4c; }
+.heroFooter { align-items: flex-end; margin-top: 42px; }
+.heroFooter p { margin: 0; max-width: 420px; font-size: 14px; letter-spacing: 0; line-height: 1.5; text-transform: none; }
+.scrollCue { display: flex; gap: 24px; align-items: center; }
+.scrollCue i { font-size: 22px; font-style: normal; animation: bounce 1.8s ease-in-out infinite; }
+@keyframes bounce { 50% { transform: translateY(7px); } }
+.projects { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; align-items: stretch; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.project { display: grid; min-width: 0; height: 100%; grid-template-rows: auto auto 1fr; padding: 18px 14px 30px; border-right: 1px solid var(--line); }
+.projectMeta { display: flex; justify-content: space-between; gap: 10px; min-height: 38px; margin-bottom: 12px; font-size: 9px; letter-spacing: .08em; line-height: 1.35; text-transform: uppercase; }
+.projectMeta span:nth-child(2) { text-align: right; }
+.projectMeta span:last-child { display: none; }
+.visual { position: relative; width: 100%; aspect-ratio: 1536 / 1024; overflow: hidden; background: #000; }
+.visual::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.2)); content: ""; }
+.visual img { display: block; width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+.visual:hover img { transform: scale(1.025); }
+.blue, .coral { background: #000; }
+.viewLabel { position: absolute; z-index: 2; right: 10px; bottom: 10px; padding: 8px 10px; border-radius: 999px; background: #f5f3ee; color: #050505; font-size: 8px; letter-spacing: .06em; text-transform: uppercase; }
+.projectInfo { display: flex; height: 100%; flex-direction: column; padding-top: 16px; }
+.projectInfo h2 { margin: 0; font-size: clamp(25px, 2.25vw, 36px); font-weight: 900; letter-spacing: -.055em; line-height: .92; text-transform: uppercase; }
+.projectDetails { display: flex; flex: 1; flex-direction: column; justify-content: space-between; gap: 18px; padding-top: 18px; }
+.projectDetails p { margin: 0; color: #d8d7d2; font-size: 14px; line-height: 1.6; }
+.projectDetails ul { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.projectDetails li { padding: 5px 7px; border: 1px solid var(--line); border-radius: 999px; color: #c9c8c3; font-size: 8px; letter-spacing: .05em; text-transform: uppercase; }
+.approach { padding: 28px 30px 80px; background: #e9ff4c; color: #050505; }
+.sectionLabel { margin: 0 0 55px; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.approach > h2 { margin: 0 0 65px; font-size: clamp(58px, 7.8vw, 124px); font-weight: 900; letter-spacing: -.08em; line-height: .83; text-transform: uppercase; }
+.approach h2 em { font-family: Georgia, serif; font-weight: 400; text-transform: none; }
+.approachGrid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(0,0,0,.5); }
+.approachGrid div { min-height: 200px; padding: 14px 18px 0 0; }
+.approachGrid div + div { padding-left: 22px; border-left: 1px solid rgba(0,0,0,.5); }
+.approachGrid span { font-size: 11px; }
+.approachGrid p { margin: 72px 0 0; max-width: 250px; font-size: 13px; line-height: 1.55; }
+.footer { min-height: 520px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 30px; }
+.footer > p { margin: 0; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.footer h2 { margin: auto 0; font-size: clamp(64px, 9vw, 138px); font-weight: 900; letter-spacing: -.08em; line-height: .78; text-transform: uppercase; }
+.footer h2 em { font-family: Georgia, serif; font-weight: 400; text-transform: none; }
+.footerBottom { display: flex; justify-content: space-between; align-items: flex-end; font-size: 13px; text-transform: uppercase; }
+.footerBottom a:first-child { padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 18px; text-transform: none; }
+@media (min-width: 1680px) { .projects { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+@media (max-width: 1050px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .hero { min-height: 430px; padding: 88px 16px 26px; }
+  .hero h1 { font-size: clamp(62px, 20vw, 88px); line-height: .8; }
+  .heroFooter { align-items: flex-start; flex-direction: column; gap: 28px; margin-top: 38px; }
+  .heroFooter p { font-size: 14px; }
+  .project { padding: 14px 12px 26px; }
+  .visual { aspect-ratio: 1536 / 1024; }
+  .visual img { object-position: center; }
+  .viewLabel { right: 12px; bottom: 12px; }
+  .projectInfo h2 { font-size: clamp(24px, 7vw, 34px); }
+  .approach { padding: 22px 16px 70px; }
+  .sectionLabel { margin-bottom: 55px; }
+  .approach > h2 { margin-bottom: 60px; font-size: 60px; }
+  .approachGrid { grid-template-columns: 1fr 1fr; }
+  .approachGrid div { min-height: 215px; border-bottom: 1px solid rgba(0,0,0,.5); }
+  .approachGrid div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .approachGrid p { margin-top: 72px; font-size: 13px; }
+  .footer { min-height: 430px; padding: 22px 16px; }
+  .footer h2 { font-size: clamp(62px, 18vw, 88px); }
+  .footerBottom { gap: 30px; align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 520px) { .projects { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .scrollCue i { animation: none; } .visual img { transition: none; } }
