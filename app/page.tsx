@@ -42,20 +42,22 @@ const coreValues = [
 ];
 
 const skills = [
-  ["Figma", "90%"],
-  ["Adobe Illustrator", "80%"],
-  ["Adobe Photoshop", "90%"],
-  ["After Effects", "50%"],
-  ["HTML", "70%"],
-  ["CSS", "70%"]
+  ["Figma", "90%", "/skills/figma.png"],
+  ["Adobe Illustrator", "80%", "/skills/illustrator.png"],
+  ["Adobe Photoshop", "90%", "/skills/photoshop.png"],
+  ["After Effects", "50%", "/skills/after-effects.png"],
+  ["HTML", "70%", "/skills/html.png"],
+  ["CSS", "70%", "/skills/css.png"]
 ];
 
 export default function HomePage() {
   const [wordStage, setWordStage] = useState(0);
   const [showGlobalNav, setShowGlobalNav] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [skillsVisible, setSkillsVisible] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const displacementImageRef = useRef<SVGFEImageElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
   const cyclingWord = wordStage === 0 ? "Product" : "Ideas → Real";
 
   const updateHeroGlow = (event: React.PointerEvent<HTMLElement>) => {
@@ -88,6 +90,19 @@ export default function HomePage() {
       window.removeEventListener("scroll", updateNavigation);
       window.removeEventListener("resize", updateNavigation);
     };
+  }, []);
+
+  useEffect(() => {
+    const section = skillsRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setSkillsVisible(true);
+        observer.disconnect();
+      }
+    }, { threshold: .25 });
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -125,13 +140,13 @@ export default function HomePage() {
         <nav className="global-nav__links" aria-label="Global navigation">
           <a href="#about">About</a>
           <a href="/work">Work</a>
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Let&apos;s talk ↗</a>
+          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Let&apos;s talk →</a>
         </nav>
         <div className="global-nav__mobile-actions">
           <button className={`global-nav__menu-button${mobileMenuOpen ? " is-open" : ""}`} type="button" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen((open) => !open)}>
             <span></span><span></span><span></span>
           </button>
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Contact ↗</a>
+          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Contact →</a>
         </div>
         <nav className={`mobile-drawer${mobileMenuOpen ? " mobile-drawer--open" : ""}`} aria-label="Mobile navigation">
           <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
@@ -244,7 +259,7 @@ export default function HomePage() {
                   unoptimized
                 />
               </div>
-              <div className="work-card__content"><h3>{work.title}</h3><p>{work.result} <span aria-hidden="true">↗</span></p></div>
+              <div className="work-card__content"><h3>{work.title}</h3><p>{work.result} <span aria-hidden="true">→</span></p></div>
             </article>
           ))}
         </div>
@@ -272,10 +287,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="portfolio-section skills-section" aria-labelledby="skills-title">
+      <section className={`portfolio-section skills-section${skillsVisible ? " skills-section--visible" : ""}`} ref={skillsRef} aria-labelledby="skills-title">
         <div className="section-intro section-intro--skills"><p className="section-label">My skill stack</p><h2 id="skills-title">Craft meets<br /><em>systems.</em></h2></div>
         <div className="skills-grid">
-          {skills.map(([name, level]) => <div className="skill-row" key={name}><span>{name}</span><span>{level}</span></div>)}
+          {skills.map(([name, level, icon]) => (
+            <div className="skill-row" key={name}>
+              <div className="skill-row__title"><Image src={icon} alt="" width={22} height={22} unoptimized /><span>{name}</span></div>
+              <div className="skill-row__track" aria-hidden="true"><span style={{ "--skill-level": level } as React.CSSProperties}></span></div>
+              <span className="skill-row__level">{level}</span>
+            </div>
+          ))}
         </div>
       </section>
 

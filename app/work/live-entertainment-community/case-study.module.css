@@ -22,6 +22,9 @@
 .sectionHead{margin-bottom:60px}
 .sectionHead h2{font-size:clamp(46px,4.7vw,86px)}
 .problemCopy h3{font-size:27px}
+.problemGrid{width:100%;max-width:1280px;grid-template-columns:minmax(0,520px) minmax(0,700px);gap:clamp(36px,3.2vw,60px);justify-content:center;margin-right:auto;margin-left:auto}
+.problemImage{position:relative;width:100%;max-width:700px;aspect-ratio:4/3;justify-self:start;overflow:hidden;background:#e8e0ff}
+.problemImage img{display:block;object-fit:contain}
 .architecture{margin:56px 0}
 .architecture article{min-height:172px}
 .architecture h3{margin-top:50px;font-size:25px}
@@ -42,4 +45,4 @@
 .reflection{padding:86px clamp(24px,3.2vw,60px)}
 .reflection blockquote{font-size:clamp(32px,3.5vw,58px)}
 .nextProject{min-height:520px;padding:24px clamp(24px,3.2vw,60px)}
-@media(max-width:760px){.hero{padding:86px 16px 58px}.hero h1{font-size:48px}.overview,.lightSection,.decision,.tradeoff{padding:58px 16px}.overview h2,.sectionHead h2,.tradeoff h2{font-size:43px}.roles{padding:0 16px 54px}.impact{padding:18px 16px 62px}.impact h2{font-size:39px}.reflection{padding:62px 16px}.reflection blockquote{font-size:35px}.nextProject{min-height:400px;padding:20px 16px}.nextProject h2{font-size:47px}}
+@media(max-width:760px){.hero{padding:86px 16px 58px}.hero h1{font-size:48px}.overview,.lightSection,.decision,.tradeoff{padding:58px 16px}.overview h2,.sectionHead h2,.tradeoff h2{font-size:43px}.problemGrid{grid-template-columns:1fr;gap:32px}.roles{padding:0 16px 54px}.impact{padding:18px 16px 62px}.impact h2{font-size:39px}.reflection{padding:62px 16px}.reflection blockquote{font-size:35px}.nextProject{min-height:400px;padding:20px 16px}.nextProject h2{font-size:47px}}
