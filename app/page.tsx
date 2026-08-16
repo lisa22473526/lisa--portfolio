@@ -2,10 +2,12 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import PortfolioFooter from "./components/portfolio-footer";
+import SiteHeader from "./components/site-header";
 
 const navigation = [
-  { label: "About me", href: "#about" },
   { label: "Work", href: "/work" }
 ];
 
@@ -19,6 +21,7 @@ const featuredWork = [
     imageAlt: "Jioo Live entertainment community app project overview",
     imageWidth: 1536,
     imageHeight: 1024,
+    href: "/work/live-entertainment-community",
     className: "work-card--live"
   },
   {
@@ -30,6 +33,7 @@ const featuredWork = [
     imageAlt: "B2B multi-brand design system project overview",
     imageWidth: 1536,
     imageHeight: 1024,
+    href: null,
     className: "work-card--system"
   }
 ];
@@ -53,7 +57,6 @@ const skills = [
 export default function HomePage() {
   const [wordStage, setWordStage] = useState(0);
   const [showGlobalNav, setShowGlobalNav] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [skillsVisible, setSkillsVisible] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const displacementImageRef = useRef<SVGFEImageElement>(null);
@@ -135,25 +138,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <header className={`global-nav${showGlobalNav ? " global-nav--visible" : ""}`}>
-        <a className="global-nav__brand" href="#about" aria-label="Lisa Huang, back to top">LISA<br />HUANG</a>
-        <nav className="global-nav__links" aria-label="Global navigation">
-          <a href="#about">About</a>
-          <a href="/work">Work</a>
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Let&apos;s talk →</a>
-        </nav>
-        <div className="global-nav__mobile-actions">
-          <button className={`global-nav__menu-button${mobileMenuOpen ? " is-open" : ""}`} type="button" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen((open) => !open)}>
-            <span></span><span></span><span></span>
-          </button>
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Contact →</a>
-        </div>
-        <nav className={`mobile-drawer${mobileMenuOpen ? " mobile-drawer--open" : ""}`} aria-label="Mobile navigation">
-          <a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a>
-          <a href="/work" onClick={() => setMobileMenuOpen(false)}>Work</a>
-          <span>Lisa Huang / Senior UI·UX Designer</span>
-        </nav>
-      </header>
+      <SiteHeader onHome visible={showGlobalNav} />
       <section className="hero" id="about" ref={heroRef} onPointerMove={updateHeroGlow}>
       <div className="hero__fx" aria-hidden="true">
         <div className="hero__cursor-glow"></div>
@@ -185,10 +170,11 @@ export default function HomePage() {
           </button>
         </div>
         <div className="hero__links">
+          <span>About</span>
           {navigation.map((item) => (
             <a href={item.href} key={item.href}>{item.label}</a>
           ))}
-          <a className="hero__contact" href="mailto:hello@lisahuang.design">Contact</a>
+          <a className="hero__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Let&apos;s talk <span className="arrow-motion">→</span></a>
         </div>
       </nav>
       <div className="hero__scene">
@@ -248,6 +234,7 @@ export default function HomePage() {
         <div className="work-list">
           {featuredWork.map((work) => (
             <article className={`work-card ${work.className}`} key={work.number}>
+              {work.href && <Link className="work-card__link" href={work.href} aria-label={`View ${work.title} case study`} />}
               <div className="work-card__top"><span>[ {work.number} ]</span><span>{work.type}</span></div>
               <div className="work-card__media">
                 <Image
@@ -259,7 +246,7 @@ export default function HomePage() {
                   unoptimized
                 />
               </div>
-              <div className="work-card__content"><h3>{work.title}</h3><p>{work.result} <span aria-hidden="true">→</span></p></div>
+              <div className="work-card__content"><h3>{work.title}</h3><p>{work.result} <span className="arrow-motion" aria-hidden="true">→</span></p></div>
             </article>
           ))}
         </div>
@@ -273,7 +260,7 @@ export default function HomePage() {
         </div>
         <div className="ai-stage">
           <div className="ai-stage__prompt">Create a clear, high-converting product experience.</div>
-          <div className="ai-stage__output"><span>RESEARCH</span><i>→</i><span>PROTOTYPE</span><i>→</i><span>BUILD</span></div>
+          <div className="ai-stage__output"><span>RESEARCH</span><i><span className="arrow-motion">→</span></i><span>PROTOTYPE</span><i><span className="arrow-motion">→</span></i><span>BUILD</span></div>
           <p>Idea to interaction / faster</p>
         </div>
       </section>
@@ -300,11 +287,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer className="portfolio-footer" id="contact">
-        <p className="section-label">Available for selected collaborations</p>
-        <h2>Let&apos;s make<br />something <em>real.</em></h2>
-        <a href="mailto:hello@lisahuang.design">hello@lisahuang.design ↗</a>
-      </footer>
+      <PortfolioFooter />
     </main>
   );
 }

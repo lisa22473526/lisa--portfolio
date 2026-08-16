@@ -45,7 +45,7 @@
 ## CTA 按鈕
 
 - 看案例
-- 聯絡我
+- LinkedIn：https://www.linkedin.com/in/huang-jing-ying-439549198
 
 ## My Skill Stack
 
@@ -55,3 +55,9 @@
 - After Effects：50%
 - HTML：70%
 - CSS：70%
+
+## Typography Rule
+
+- 介紹文、說明文、價值卡描述與作品成果文字統一固定為 `14px`。
+- 內文行高使用 `1.5–1.55`，確保中文閱讀性。
+- 完整字體、色彩與動態規範請參考 `DESIGN-SYSTEM.md`。

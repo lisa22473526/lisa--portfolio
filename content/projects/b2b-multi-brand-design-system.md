@@ -4,7 +4,6 @@ slug: "b2b-multi-brand-design-system"
 projectNumber: "02"
 projectType: "Design System"
 category: "B2B"
-period: "2024—2026"
 coverImage: "/projects/b2b-multi-brand-design-system-v2.png"
 coverAlt: "B2B multi-brand design system project overview"
 featured: true
@@ -31,7 +30,6 @@ status: "draft"
 | 欄位 | 內容 |
 | --- | --- |
 | 產品類型 | B2B Platform / Multi-Brand Product |
-| 專案期間 | 2024—2026 |
 | 我的角色 | Design System Lead / Product Designer |
 | 負責範圍 | Audit、Foundation、Design Token、Component、Governance、Handoff |
 | 合作對象 | Product、Engineering、品牌或營運團隊（待確認） |

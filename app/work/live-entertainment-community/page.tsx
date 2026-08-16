@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SiteHeader from "../../components/site-header";
 import styles from "./case-study.module.css";
 
 export const metadata: Metadata = {
@@ -54,20 +55,10 @@ const impactGroups = [
 export default function LiveEntertainmentCaseStudy() {
   return (
     <main className={styles.page}>
-      <header className="global-nav global-nav--visible">
-        <Link className="global-nav__brand" href="/" aria-label="Lisa Huang, back to home">LISA<br />HUANG</Link>
-        <nav className="global-nav__links" aria-label="Global navigation">
-          <Link href="/#about">About</Link>
-          <Link href="/work" aria-current="page">Work</Link>
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Let&apos;s talk ↗</a>
-        </nav>
-        <div className="global-nav__mobile-actions">
-          <a className="global-nav__contact" href="mailto:hello@lisahuang.design">Contact ↗</a>
-        </div>
-      </header>
+      <SiteHeader alwaysVisible />
 
       <section className={styles.hero}>
-        <div className={styles.heroMeta}><span>[ 01 ]</span><span>Mobile product · B2C</span><span>2023—2026</span></div>
+        <div className={styles.heroMeta}><span>[ 01 ]</span><span>Mobile product · B2C</span></div>
         <h1>Live entertainment<br /><em>community.</em></h1>
         <div className={styles.heroIntro}>
           <p>結合體育賽事直播、即時數據資訊與主播社群互動的一站式平台。</p>
@@ -135,7 +126,7 @@ export default function LiveEntertainmentCaseStudy() {
       </section>
 
       <footer className={styles.nextProject}>
-        <span>Next project / 02</span><h2>Multi-brand<br /><em>design system.</em></h2><Link href="/work">Back to all work ↗</Link>
+        <span>Next project / 02</span><h2>Multi-brand<br /><em>design system.</em></h2><Link href="/work">Back to all work <span className="arrow-motion">↗︎</span></Link>
       </footer>
     </main>
   );
