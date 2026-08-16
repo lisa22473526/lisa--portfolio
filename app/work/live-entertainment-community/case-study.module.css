@@ -2,14 +2,13 @@
 @media(max-width:760px){.hero{padding:90px 16px 70px}.heroMeta{grid-template-columns:1fr auto;margin-bottom:50px}.heroMeta span:last-child{display:none}.hero h1{font-size:58px}.heroIntro{align-items:start;flex-direction:column;gap:22px}.heroIntro p{font-size:16px}.overview,.sectionHead{grid-template-columns:1fr}.overview{padding:70px 16px}.overview h2{margin-top:35px;font-size:50px}.overview .lead{grid-column:1;margin-top:35px;font-size:15px}.roles{grid-template-columns:1fr 1fr;padding:0 16px 70px}.roles article:nth-child(3){padding-left:0;border-left:0}.roles h3{margin-top:48px}.lightSection,.decision{padding:70px 16px}.sectionHead{gap:35px;margin-bottom:55px}.sectionHead h2{font-size:54px}.problemGrid,.impactIntro,.tradeoff>div,.reflection{grid-template-columns:1fr}.architecture{grid-template-columns:1fr}.architecture article+article{padding-left:0;border-left:0;border-top:1px solid rgba(0,0,0,.4)}.architecture article{min-height:170px}.architecture h3{margin-top:45px}.decisionGrid,.twoImages{grid-template-columns:1fr}.decisionGrid>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}.decisionGrid>div{min-height:260px}.decision h3{margin-top:65px}.impact{padding:20px 16px 80px}.impactIntro{gap:30px;margin:50px 0}.impact h2{font-size:46px}.metrics div{min-height:125px}.metrics strong{font-size:36px}.tradeoff{padding:70px 16px}.tradeoff>div{gap:35px;margin:45px 0}.tradeoff h2{font-size:50px}.reflection{gap:45px;padding:80px 16px}.reflection blockquote{font-size:42px}.nextProject{min-height:480px;padding:22px 16px}.nextProject h2{font-size:55px}}
 
 /* Compact 1920px case-study frame and product-purple theme */
-.page{--acid:#8b6cff;max-width:1920px;margin:0 auto;background:#08070d;box-shadow:0 0 0 1px rgba(139,108,255,.12)}
-.page :global(.global-nav){border-bottom-color:rgba(139,108,255,.34)}
-.page :global(.global-nav__contact){background:#8b6cff;color:#fff}
-.accentText{color:#9a80ff;font-family:inherit;font-style:normal;font-weight:900}
+.page{--case-accent:#8b6cff;--case-accent-text:#9a80ff;--case-bg:#08070d;--case-surface:#eee9ff;--acid:var(--case-accent);max-width:1920px;margin:0 auto;background:var(--case-bg);box-shadow:0 0 0 1px color-mix(in srgb,var(--case-accent) 12%,transparent)}
+.accentText{color:var(--case-accent-text);font-family:inherit;font-style:normal;font-weight:900}
 .hero{padding:96px clamp(24px,3.2vw,60px) 78px}
 .heroMeta{margin-bottom:48px}
+.heroMeta{grid-template-columns:auto 1fr}.heroMeta span:last-child{text-align:right}
 .hero h1,.sectionHead h2,.overview h2,.impact h2,.tradeoff h2,.nextProject h2{font-size:clamp(50px,5.2vw,100px);line-height:.88}
-.hero h1 em,.sectionHead em,.overview em,.tradeoff em,.nextProject em{color:#9a80ff}
+.hero h1 em,.sectionHead em,.overview em,.tradeoff em,.nextProject em{color:var(--case-accent-text);font-family:var(--font-serif)}
 .heroIntro{margin:36px 0 22px}
 .heroIntro p{font-size:17px}
 .overview{padding:76px clamp(24px,3.2vw,60px)}
@@ -18,7 +17,7 @@
 .roles{padding:0 clamp(24px,3.2vw,60px) 70px}
 .roles article{min-height:185px}
 .roles h3{margin-top:54px}
-.lightSection{padding:76px clamp(24px,3.2vw,60px) 86px;background:#eee9ff}
+.lightSection{padding:76px clamp(24px,3.2vw,60px) 86px;background:var(--case-surface)}
 .sectionHead{margin-bottom:60px}
 .sectionHead h2{font-size:clamp(46px,4.7vw,86px)}
 .problemCopy h3{font-size:27px}
@@ -38,7 +37,7 @@
 .impact h2{font-size:clamp(42px,4.4vw,80px)}
 .metrics div{min-height:145px}
 .metrics strong{font-size:clamp(42px,4.5vw,76px)}
-.tradeoff{padding:78px clamp(24px,3.2vw,60px);background:#7454df;color:#fff}
+.tradeoff{padding:78px clamp(24px,3.2vw,60px);background:color-mix(in srgb,var(--case-accent) 83%,#000);color:var(--color-text)}
 .tradeoff h2{font-size:clamp(46px,4.8vw,88px)}
 .tradeoff .imageSlot{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}
 .tradeoff .imageSlot span,.tradeoff .imageSlot small{color:#fff}

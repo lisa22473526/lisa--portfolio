@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GoTop from "./components/go-top";
 
 export const metadata: Metadata = {
   title: "Lisa Huang — Product Designer & AI Builder",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-Hant">
-      <body>{children}</body>
+      <body>{children}<GoTop /></body>
     </html>
   );
 }
