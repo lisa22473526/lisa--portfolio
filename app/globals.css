@@ -128,11 +128,24 @@ a { color: inherit; text-decoration: none; }
 .value-card { min-height: 320px; padding: 18px 20px 24px 0; border-bottom: 1px solid rgba(255, 255, 255, .45); } .value-card + .value-card { padding-left: 20px; border-left: 1px solid rgba(255, 255, 255, .45); }
 .value-card > span { font-size: 12px; letter-spacing: .08em; } .value-card h3 { margin: 98px 0 14px; font-size: 21px; font-weight: 500; letter-spacing: -.04em; } .value-card p { max-width: 250px; margin: 0; color: #dcdcdc; font-size: 13px; line-height: 1.55; }
 .skills-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding-top: 110px; } .section-intro--skills { display: block; margin: 0; } .section-intro--skills .section-label { margin-bottom: 50px; }
-.skills-grid { align-self: end; border-top: 1px solid rgba(255, 255, 255, .45); } .skill-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, .45); font-size: 16px; } .skill-row span:last-child { color: #e8ff47; }
+.skills-grid { align-self: end; border-top: 1px solid rgba(255, 255, 255, .45); }
+.skill-row { display: grid; grid-template-columns: minmax(180px, .8fr) minmax(120px, 1.5fr) 44px; align-items: center; gap: 20px; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, .45); font-size: 16px; }
+.skill-row__title { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.skill-row__title img { width: 1.35em; height: 1.35em; flex: 0 0 auto; object-fit: contain; }
+.skill-row__level { color: #e8ff47; text-align: right; }
+.skill-row__track { height: 4px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.14); }
+.skill-row__track span { display: block; width: var(--skill-level); height: 100%; border-radius: inherit; background: #e8ff47; box-shadow: 0 0 14px rgba(232,255,71,.48); transform: scaleX(0); transform-origin: left center; transition: transform 1.15s cubic-bezier(.16,1,.3,1); }
+.skills-section--visible .skill-row__track span { transform: scaleX(1); }
+.skill-row:nth-child(2) .skill-row__track span { transition-delay: .08s; }
+.skill-row:nth-child(3) .skill-row__track span { transition-delay: .16s; }
+.skill-row:nth-child(4) .skill-row__track span { transition-delay: .24s; }
+.skill-row:nth-child(5) .skill-row__track span { transition-delay: .32s; }
+.skill-row:nth-child(6) .skill-row__track span { transition-delay: .4s; }
 .portfolio-footer { min-height: 600px; display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 24px; } .portfolio-footer h2 { font-size: clamp(72px, 11vw, 170px); } .portfolio-footer a { align-self: flex-end; border-bottom: 1px solid #fff; padding-bottom: 6px; font-size: 18px; }
 
 @media (max-width: 840px) { .portfolio-section, .portfolio-footer { padding: 22px 20px 78px; } .section-intro { grid-template-columns: 1fr; gap: 25px; margin-bottom: 46px; } .section-copy { max-width: 440px; } .ai-copy span { display: inline; white-space: normal; } .work-list { grid-template-columns: 1fr; } .work-card { min-height: 460px; } .section-intro--ai, .section-intro--values { grid-template-columns: 1fr; } .value-grid { grid-template-columns: 1fr 1fr; } .value-card:nth-child(3) { padding-left: 0; border-left: 0; } .value-card:nth-child(3), .value-card:nth-child(4) { border-top: 1px solid rgba(255, 255, 255, .45); } .skills-section { grid-template-columns: 1fr; gap: 46px; padding-top: 78px; } .portfolio-footer { min-height: 430px; } }
-@media (max-width: 520px) { .portfolio-section, .portfolio-footer { padding: 20px 16px 58px; } .section-intro h2 { font-size: 58px; } .work-card { min-height: 390px; padding: 16px; } .work-card h3 { font-size: 47px; } .ai-stage { min-height: 330px; padding: 16px; } .ai-stage__prompt { max-width: 100%; font-size: 13px; } .ai-stage__output { flex-wrap: wrap; justify-content: center; width: 80%; font-size: 33px; text-align: center; } .ai-stage > p { right: 16px; bottom: 16px; } .value-grid { grid-template-columns: 1fr; } .value-card, .value-card + .value-card { min-height: 240px; padding: 16px 0 22px; border-left: 0; } .value-card + .value-card { border-top: 1px solid rgba(255, 255, 255, .45); } .value-card h3 { margin-top: 58px; } .portfolio-footer { min-height: 360px; } .portfolio-footer h2 { font-size: 70px; } .portfolio-footer a { align-self: flex-start; font-size: 15px; } }
+@media (max-width: 520px) { .portfolio-section, .portfolio-footer { padding: 20px 16px 58px; } .section-intro h2 { font-size: 58px; } .work-card { min-height: 390px; padding: 16px; } .work-card h3 { font-size: 47px; } .ai-stage { min-height: 520px; padding: 16px; } .ai-stage__prompt { max-width: calc(100% - 32px); font-size: 12px; } .ai-stage__output { top: 52%; flex-direction: column; flex-wrap: nowrap; justify-content: center; gap: 18px; width: auto; font-size: clamp(30px, 10vw, 40px); text-align: center; } .ai-stage__output i { line-height: .7; transform: rotate(90deg); } .ai-stage > p { right: 16px; bottom: 16px; } .value-grid { grid-template-columns: 1fr; } .value-card, .value-card + .value-card { min-height: 240px; padding: 16px 0 22px; border-left: 0; } .value-card + .value-card { border-top: 1px solid rgba(255, 255, 255, .45); } .value-card h3 { margin-top: 58px; } .portfolio-footer { min-height: 360px; } .portfolio-footer h2 { font-size: 70px; } .portfolio-footer a { align-self: flex-start; font-size: 15px; } }
+@media (max-width: 520px) { .skill-row { grid-template-columns: minmax(112px, 1fr) minmax(68px, 1fr) 36px; gap: 9px; font-size: 12px; } .skill-row__title { gap: 7px; } }
 
 /* Full-frame project gallery */
 .portfolio-section--work { padding-bottom: 110px; }
@@ -183,6 +196,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 700px) { .portfolio-section--work { padding: 66px 16px; } .portfolio-section--work .section-copy span { display: inline; white-space: normal; } .portfolio-section--work .work-list { grid-template-columns: 1fr; gap: 40px; } .portfolio-section--work .work-card__content { min-height: 112px; } .portfolio-section--work .work-card h3 { font-size: 31px; } }
 @media (prefers-reduced-motion: reduce) { .work-orbits span { animation: none; } }
 @media (prefers-reduced-motion: reduce) { .hero__next, .hero__orbit, .hero__mouse-icon i { animation: none; } .hero__roles .hero__ai-label { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .skill-row__track span { transform: scaleX(1); transition: none; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* Responsive hero typography and collision prevention */

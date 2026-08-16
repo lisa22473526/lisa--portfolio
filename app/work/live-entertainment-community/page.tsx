@@ -92,7 +92,9 @@ export default function LiveEntertainmentCaseStudy() {
         <div className={styles.sectionHead}><p className={styles.label}>Problem & architecture / 01</p><h2>核心問題與<br /><span className={styles.accentText}>總體架構。</span></h2></div>
         <div className={styles.problemGrid}>
           <div className={styles.problemCopy}><h3>痛點</h3><p>舊版／傳統體育 App 畫面切割混亂，使用者在「看直播」、「查比分／數據」與「社群聊天討論」之間切換成本極高，且直播時的聊天室洗版快速，導致重要賽事訊息被淹沒。</p></div>
-          <ImageSlot title="舊版與新版 Information Architecture" ratio="4:3" light />
+          <div className={styles.problemImage}>
+            <Image src="/projects/project01/P_01.png" alt="直播、賽事數據與聊天室整合為單一觀賽介面的架構示意" fill sizes="(max-width: 760px) 100vw, 64vw" />
+          </div>
         </div>
         <div className={styles.architecture}>
           {architecture.map(([name, detail], index) => <article key={name}><span>0{index + 1}</span><h3>{name}</h3><p>{detail}</p></article>)}
