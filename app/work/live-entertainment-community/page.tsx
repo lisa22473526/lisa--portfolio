@@ -19,7 +19,7 @@ const roleItems = [
 const architecture = [
   ["Live", "不中斷、具沉浸感的賽事觀看"],
   ["Data", "不離開直播即可掌握比分與即時數據"],
-  ["Community", "主播互動、聊天室、跟單與應援"]
+  ["Community", "主播互動、聊天室、應援"]
 ];
 
 const impactGroups = [
@@ -65,7 +65,7 @@ export default function LiveEntertainmentCaseStudy() {
           <span>Lead UI/UX Designer</span>
         </div>
         <div className={styles.cover}>
-          <Image src="/projects/live-entertainment-community-v2.png" alt="Live entertainment community app overview" fill priority sizes="100vw" />
+          <Image src="/projects/live-entertainment-community-v2.webp" alt="Live entertainment community app overview" fill priority sizes="100vw" />
         </div>
       </section>
 
@@ -82,24 +82,65 @@ export default function LiveEntertainmentCaseStudy() {
       <section className={styles.lightSection}>
         <div className={styles.sectionHead}><p className={styles.label}>Problem & architecture / 01</p><h2>核心問題與<br /><span className={styles.accentText}>總體架構。</span></h2></div>
         <div className={styles.problemGrid}>
-          <div className={styles.problemCopy}><h3>痛點</h3><p>舊版／傳統體育 App 畫面切割混亂，使用者在「看直播」、「查比分／數據」與「社群聊天討論」之間切換成本極高，且直播時的聊天室洗版快速，導致重要賽事訊息被淹沒。</p></div>
+          <div className={styles.problemCopy}>
+            <h3>痛點</h3>
+            <p>舊版／傳統體育 App 畫面切割混亂，使用者在「看直播」、「查比分／數據」與「社群聊天討論」之間切換成本極高，且直播時的聊天室洗版快速，導致重要賽事訊息被淹沒。</p>
+            <div className={styles.solutionCopy}>
+              <h3>解決方案</h3>
+              <p>重新規劃資訊架構（Information Architecture），打造可彈性切換的直播／資訊／聊天三合一介面。</p>
+            </div>
+          </div>
           <div className={styles.problemImage}>
-            <Image src="/projects/project01/P_01.png" alt="直播、賽事數據與聊天室整合為單一觀賽介面的架構示意" fill sizes="(max-width: 760px) 100vw, 64vw" />
+            <Image src="/projects/project01/P_01.webp" alt="直播、賽事數據與聊天室整合為單一觀賽介面的架構示意" fill sizes="(max-width: 760px) 100vw, 64vw" />
           </div>
         </div>
         <div className={styles.architecture}>
-          {architecture.map(([name, detail], index) => <article key={name}><span>0{index + 1}</span><h3>{name}</h3><p>{detail}</p></article>)}
+          {architecture.map(([name, detail], index) => <article key={name} data-step={`0${index + 1}`}><span>0{index + 1}</span><h3>{name}</h3><p>{detail}</p></article>)}
         </div>
-        <ImageSlot title="直播 / 資訊 / 聊天三合一介面" ratio="21:9" light />
       </section>
 
       <section className={styles.decision}>
-        <div className={styles.sectionHead}><p className={styles.label}>Key decision / 02</p><h2>Designing for<br /><em>the moment.</em></h2></div>
+        <div className={styles.sectionHead}><p className={styles.label}>Design highlights / 02</p><h2>設計<br /><span className={styles.accentText}>亮點。</span></h2></div>
         <div className={styles.decisionGrid}>
-          <div><span className={styles.index}>A</span><h3>高密度聊天室中的重要訊息</h3><p>這個區塊保留給聊天室資訊層級、重要訊息呈現方式，以及 Before / After 的設計說明。</p><span className={styles.pending}>Content to be added</span></div>
-          <div><span className={styles.index}>B</span><h3>依橫豎屏重新分配資訊優先級</h3><p>橫屏優先直播內容與沉浸感；豎屏提供完整資訊與聊天頁籤。這不是單純改變排列方向，而是回應兩種不同的觀看情境。</p></div>
+          <div><span className={styles.index}>A</span><h3>透過吉祥物將原本枯燥的「空白狀態」轉化為具親和力的互動。</h3><p>除了傳遞訊息，加入擬人化 IP 角色帶來溫暖陪伴感，減少用戶離線與冷漠感。</p></div>
+          <div className={styles.emptyHighlightCopy} aria-hidden="true" />
         </div>
-        <div className={styles.twoImages}><ImageSlot title="橫屏：沉浸式觀看與彈幕浮層" ratio="16:10" /><ImageSlot title="豎屏：資訊與聊天頁籤" ratio="16:10" /></div>
+        <div className={styles.twoImages}>
+          <div className={styles.highlightImage}>
+            <Image src="/projects/project01/design-highlight-mascot.webp" alt="以吉祥物強化通知中心空白狀態與訊息互動的介面設計" fill sizes="(max-width: 760px) 100vw, 50vw" />
+          </div>
+          <div className={styles.emptyHighlight} aria-label="第二個設計亮點，內容待補" />
+        </div>
+      </section>
+
+      <section className={styles.microInteraction}>
+        <div className={styles.microLayout}>
+          <div className={styles.microContent}>
+            <div className={styles.microHeader}>
+              <p className={styles.label}>Motion & interaction</p>
+              <h2>UI 微互動與<br /><span>細節設計。</span></h2>
+            </div>
+            <div className={styles.microList}>
+              <p className={styles.microCategory}>主播個人頁</p>
+              <article>
+                <span>01</span>
+                <h3>畫面動態收合</h3>
+                <p><strong>設計重點：</strong>解決內容被大 Header 遮擋的痛點。上滑時大頭貼縮小移至頂列，大幅釋放瀏覽區域，同時保持「追蹤／送禮」核心 CTA 常駐。</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Follow 按鈕動態回饋</h3>
+                <p><strong>設計重點：</strong>透過微動態（Micro-animation）提升點擊反饋質感與儀式感，增加用戶追蹤轉化率。</p>
+              </article>
+            </div>
+          </div>
+          <div className={styles.phoneDemo}>
+            <div className={styles.phoneSpeaker} />
+            <video autoPlay loop muted playsInline aria-label="主播個人頁 UI 微互動展示">
+              <source src="/projects/project01/profile-micro-interaction.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
       </section>
 
       <section className={styles.impacts}>

@@ -4,7 +4,7 @@ slug: "b2b-multi-brand-design-system"
 projectNumber: "02"
 projectType: "Design System"
 category: "B2B"
-coverImage: "/projects/b2b-multi-brand-design-system-v2.png"
+coverImage: "/projects/b2b-multi-brand-design-system-v2.webp"
 coverAlt: "B2B multi-brand design system project overview"
 featured: true
 status: "draft"
