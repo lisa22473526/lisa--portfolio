@@ -20,16 +20,49 @@
 .lightSection{padding:76px clamp(24px,3.2vw,60px) 86px;background:var(--case-surface)}
 .sectionHead{margin-bottom:60px}
 .sectionHead h2{font-size:clamp(46px,4.7vw,86px)}
-.problemCopy h3{font-size:27px}
+.problemCopy>h3{display:flex;align-items:center;gap:12px;font-size:27px;font-weight:800;letter-spacing:-.03em}
+.problemCopy>h3::before{width:28px;height:4px;content:"";background:var(--case-accent)}
+.solutionCopy{margin-top:36px;padding:24px 26px;border-left:4px solid var(--case-accent);background:rgba(139,108,255,.1)}
+.solutionCopy h3{margin:0 0 12px;color:#6545dc;font-size:12px;letter-spacing:.12em;line-height:1;text-transform:uppercase}
+.solutionCopy p{max-width:440px;font-size:17px;font-weight:700;line-height:1.65}
 .problemGrid{width:100%;max-width:1280px;grid-template-columns:minmax(0,520px) minmax(0,700px);gap:clamp(36px,3.2vw,60px);justify-content:center;margin-right:auto;margin-left:auto}
 .problemImage{position:relative;width:100%;max-width:700px;aspect-ratio:4/3;justify-self:start;overflow:hidden;background:#e8e0ff}
 .problemImage img{display:block;object-fit:contain}
-.architecture{margin:56px 0}
-.architecture article{min-height:172px}
-.architecture h3{margin-top:50px;font-size:25px}
+.architecture{width:100%;max-width:1280px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px auto 0;border:0}
+.architecture article{position:relative;min-height:190px;padding:22px 24px;overflow:hidden;border:1px solid rgba(101,69,220,.14);background:rgba(255,255,255,.46)}
+.architecture article:nth-child(2){background:rgba(139,108,255,.11)}
+.architecture article:nth-child(3){background:rgba(139,108,255,.2)}
+.architecture article+article{padding-left:24px;border-left:1px solid rgba(101,69,220,.14)}
+.architecture article:not(:last-child)::after{position:absolute;z-index:2;top:50%;right:-7px;width:14px;height:14px;content:"";transform:translateY(-50%) rotate(45deg);border-top:1px solid #7457e7;border-right:1px solid #7457e7;background:var(--case-surface)}
+.architecture span{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border:1px solid rgba(101,69,220,.32);border-radius:50%;color:#6545dc;font-weight:700}
+.architecture h3{margin:38px 0 10px;color:#4f32bd;font-size:28px;letter-spacing:-.04em}
+.architecture p{position:relative;z-index:1;max-width:300px;font-size:14px}
+.architecture article::before{position:absolute;right:12px;bottom:-30px;color:rgba(101,69,220,.07);content:attr(data-step);font-size:120px;font-weight:900;line-height:1}
 .decision{padding:78px clamp(24px,3.2vw,60px) 86px}
 .decisionGrid>div{min-height:250px}
 .decision h3{margin-top:68px;font-size:27px}
+.emptyHighlightCopy{background:rgba(139,108,255,.025)}
+.highlightImage,.emptyHighlight{position:relative;width:100%;aspect-ratio:3/2;overflow:hidden}
+.highlightImage{background:#171124}
+.highlightImage img{object-fit:contain}
+.emptyHighlight{border:1px solid rgba(139,108,255,.22);background:rgba(139,108,255,.025)}
+.microInteraction{padding:76px clamp(24px,3.2vw,60px) 86px;border-top:1px solid var(--line);background:#100d19}
+.microHeader{margin-bottom:46px}
+.microHeader .label{margin:0 0 24px}
+.microHeader h2{margin:0;font-size:clamp(42px,4vw,72px);font-weight:900;letter-spacing:-.065em;line-height:.9}
+.microHeader h2 span{color:var(--case-accent-text)}
+.microLayout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:clamp(48px,6vw,110px);align-items:center;max-width:1280px;margin:0 auto}
+.microContent{min-width:0}
+.microList{border-top:1px solid var(--line)}
+.microCategory{margin:0;padding:16px 0;color:var(--case-accent-text);font-size:11px;font-weight:700;letter-spacing:.12em}
+.microList article{display:grid;grid-template-columns:48px minmax(180px,.75fr) 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}
+.microList article>span{color:var(--case-accent-text);font-size:11px;font-weight:700}
+.microList h3{max-width:280px;margin:0;font-size:22px;line-height:1.25}
+.microList p{max-width:470px;margin:0;color:#c9c4d2;font-size:14px;line-height:1.75}
+.microList strong{color:#fff}
+.phoneDemo{position:relative;width:min(100%,330px);aspect-ratio:9/19.5;justify-self:center;padding:11px;overflow:hidden;border:2px solid rgba(255,255,255,.55);border-radius:46px;background:#050505;box-shadow:0 30px 80px rgba(89,53,214,.28)}
+.phoneDemo video{display:block;width:100%;height:100%;border-radius:35px;object-fit:cover;background:#000}
+.phoneSpeaker{position:absolute;z-index:2;top:18px;left:50%;width:76px;height:19px;transform:translateX(-50%);border-radius:999px;background:#050505}
 .imageSlot{border-color:rgba(139,108,255,.7);background:repeating-linear-gradient(-45deg,rgba(139,108,255,.035),rgba(139,108,255,.035) 12px,transparent 12px,transparent 24px)}
 .imageSlotLight{border-color:rgba(74,46,164,.4);background:repeating-linear-gradient(-45deg,rgba(139,108,255,.05),rgba(139,108,255,.05) 12px,transparent 12px,transparent 24px)}
 .impact{padding:22px clamp(24px,3.2vw,60px) 84px}
@@ -44,4 +77,4 @@
 .reflection{padding:86px clamp(24px,3.2vw,60px)}
 .reflection blockquote{font-size:clamp(32px,3.5vw,58px)}
 .nextProject{min-height:520px;padding:24px clamp(24px,3.2vw,60px)}
-@media(max-width:760px){.hero{padding:86px 16px 58px}.hero h1{font-size:48px}.overview,.lightSection,.decision,.tradeoff{padding:58px 16px}.overview h2,.sectionHead h2,.tradeoff h2{font-size:43px}.problemGrid{grid-template-columns:1fr;gap:32px}.roles{padding:0 16px 54px}.impact{padding:18px 16px 62px}.impact h2{font-size:39px}.reflection{padding:62px 16px}.reflection blockquote{font-size:35px}.nextProject{min-height:400px;padding:20px 16px}.nextProject h2{font-size:47px}}
+@media(max-width:760px){.hero{padding:86px 16px 58px}.hero h1{font-size:48px}.overview,.lightSection,.decision,.tradeoff{padding:58px 16px}.overview h2,.sectionHead h2,.tradeoff h2{font-size:43px}.problemGrid{grid-template-columns:1fr;gap:32px}.solutionCopy{margin-top:28px;padding:20px}.solutionCopy p{font-size:16px}.architecture{grid-template-columns:1fr;gap:10px}.architecture article+article{padding-left:20px;border-left:1px solid rgba(101,69,220,.14)}.architecture article:not(:last-child)::after{display:none}.microInteraction{padding:58px 16px 70px}.microHeader{margin-bottom:40px}.microHeader h2{font-size:43px}.microLayout{grid-template-columns:1fr;gap:52px}.microList article{grid-template-columns:34px 1fr;gap:12px}.microList h3{font-size:19px}.microList p{grid-column:2}.phoneDemo{width:min(82vw,310px)}.roles{padding:0 16px 54px}.impact{padding:18px 16px 62px}.impact h2{font-size:39px}.reflection{padding:62px 16px}.reflection blockquote{font-size:35px}.nextProject{min-height:400px;padding:20px 16px}.nextProject h2{font-size:47px}}

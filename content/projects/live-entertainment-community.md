@@ -6,7 +6,7 @@ projectNumber: "01"
 projectType: "Mobile Product"
 category: "B2C"
 role: "Lead UI/UX Designer"
-coverImage: "/projects/live-entertainment-community-v2.png"
+coverImage: "/projects/live-entertainment-community-v2.webp"
 coverAlt: "Live entertainment community app project overview"
 featured: true
 status: "draft"

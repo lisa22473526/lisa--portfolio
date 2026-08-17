@@ -17,7 +17,7 @@ const featuredWork = [
     type: "Mobile product",
     title: "Live entertainment community app",
     result: "功能優化後，轉化率大幅提升",
-    image: "/projects/live-entertainment-community-v2.png",
+    image: "/projects/live-entertainment-community-v2.webp",
     imageAlt: "Jioo Live entertainment community app project overview",
     imageWidth: 1536,
     imageHeight: 1024,
@@ -29,7 +29,7 @@ const featuredWork = [
     type: "Design system",
     title: "B2B Multi-Brand Design System",
     result: "打造廠商客製一鍵換色的機制",
-    image: "/projects/b2b-multi-brand-design-system-v2.png",
+    image: "/projects/b2b-multi-brand-design-system-v2.webp",
     imageAlt: "B2B multi-brand design system project overview",
     imageWidth: 1536,
     imageHeight: 1024,
@@ -46,12 +46,12 @@ const coreValues = [
 ];
 
 const skills = [
-  ["Figma", "90%", "/skills/figma.png"],
-  ["Adobe Illustrator", "80%", "/skills/illustrator.png"],
-  ["Adobe Photoshop", "90%", "/skills/photoshop.png"],
-  ["After Effects", "50%", "/skills/after-effects.png"],
-  ["HTML", "70%", "/skills/html.png"],
-  ["CSS", "70%", "/skills/css.png"]
+  ["Figma", "90%", "/skills/figma.webp"],
+  ["Adobe Illustrator", "80%", "/skills/illustrator.webp"],
+  ["Adobe Photoshop", "90%", "/skills/photoshop.webp"],
+  ["After Effects", "50%", "/skills/after-effects.webp"],
+  ["HTML", "70%", "/skills/html.webp"],
+  ["CSS", "70%", "/skills/css.webp"]
 ];
 
 export default function HomePage() {

@@ -18,7 +18,7 @@ const projects = [
     title: "Live entertainment community",
     summary: "重新梳理內容探索與互動路徑，讓使用者更快找到喜愛的活動，也讓核心轉化率獲得雙位數成長。",
     tags: ["Research", "UX Strategy", "UI Design", "A/B Test"],
-    image: "/projects/live-entertainment-community-v2.png",
+    image: "/projects/live-entertainment-community-v2.webp",
     alt: "Live entertainment community app interface overview",
     tone: "blue",
     href: "/work/live-entertainment-community"
@@ -29,7 +29,7 @@ const projects = [
     title: "Multi-brand design system",
     summary: "從零建立可延展的品牌系統與元件規範，打造廠商客製一鍵換色機制，提升設計與開發協作效率。",
     tags: ["Design System", "Token", "Governance", "Handoff"],
-    image: "/projects/b2b-multi-brand-design-system-v2.png",
+    image: "/projects/b2b-multi-brand-design-system-v2.webp",
     alt: "B2B multi-brand design system interface overview",
     tone: "coral",
     href: null
