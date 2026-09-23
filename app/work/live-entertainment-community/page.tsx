@@ -110,15 +110,27 @@ export default function LiveEntertainmentCaseStudy() {
 
       <section className={styles.decision}>
         <div className={styles.sectionHead}><p className={styles.label}>Design highlights / 02</p><h2>設計<br /><span className={styles.accentText}>亮點。</span></h2></div>
-        <div className={styles.decisionGrid}>
-          <div><span className={styles.index}>A</span><h3>透過吉祥物將原本枯燥的「空白狀態」轉化為具親和力的互動。</h3><p>除了傳遞訊息，加入擬人化 IP 角色帶來溫暖陪伴感，減少用戶離線與冷漠感。</p></div>
-          <div className={styles.emptyHighlightCopy} aria-hidden="true" />
-        </div>
-        <div className={styles.twoImages}>
-          <div className={styles.highlightImage}>
-            <Image src="/projects/project01/design-highlight-mascot.webp" alt="以吉祥物強化通知中心空白狀態與訊息互動的介面設計" fill sizes="(max-width: 760px) 100vw, 50vw" />
-          </div>
-          <div className={styles.emptyHighlight} aria-label="第二個設計亮點，內容待補" />
+        <div className={styles.highlightCards}>
+          <article className={styles.highlightCard}>
+            <div className={styles.highlightCopy}>
+              <span className={styles.index}>A</span>
+              <h3>透過吉祥物將原本枯燥的「空白狀態」轉化為具親和力的互動。</h3>
+              <p>除了傳遞訊息，加入擬人化 IP 角色帶來溫暖陪伴感，減少用戶離線與冷漠感。</p>
+            </div>
+            <div className={styles.highlightImage}>
+              <Image src="/projects/project01/design-highlight-mascot.webp" alt="以吉祥物強化通知中心空白狀態與訊息互動的介面設計" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            </div>
+          </article>
+          <article className={styles.highlightCard}>
+            <div className={styles.highlightCopy}>
+              <span className={styles.index}>B</span>
+              <h3>在直播間無代幣時，快速完成儲值。</h3>
+              <p>以半屏彈窗呈現快速儲值，讓用戶在不中斷直播與聊天室的情況下完成支付，縮短打賞前的操作路徑，也保留即時互動的節奏。</p>
+            </div>
+            <div className={styles.highlightImage}>
+              <Image src="/projects/project01/live-room-quick-top-up-v3.webp" alt="直播間不中斷觀看與聊天的快速儲值半屏彈窗設計" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            </div>
+          </article>
         </div>
       </section>
 
@@ -185,7 +197,9 @@ export default function LiveEntertainmentCaseStudy() {
                     </ul>
                   </div>
                 </div>
-                <ImageSlot title="活動機制與 UI 優化 / Before & After" ratio="4:5" />
+                <div className={styles.activityVisual}>
+                  <Image src="/projects/project01/night-sports-event-optimization-v3.webp" alt="深夜賽事互動活動主視覺、門檻階梯化流程，以及打賞禮物與活動贈禮 UI 對照" fill sizes="(max-width: 760px) 100vw, 42vw" />
+                </div>
               </div>
             ) : impact.immersiveImage && impact.image ? (
               <div className={styles.impactMediaGrid}>

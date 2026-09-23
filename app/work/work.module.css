@@ -16,7 +16,7 @@
 .visual::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,.2)); content: ""; }
 .visual img { display: block; width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; transition: transform .8s cubic-bezier(.16,1,.3,1); }
 .visual:hover img { transform: scale(1.025); }
-.blue, .coral { background: #000; }
+.blue, .coral, .red { background: #000; }
 .viewLabel { position: absolute; z-index: 2; right: 10px; bottom: 10px; padding: 8px 10px; border-radius: var(--radius-pill); background: var(--work-text); color: var(--work-bg); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; }
 .projectInfo { display: flex; height: 100%; flex-direction: column; padding-top: 16px; }
 .projectInfo h2 { margin: 0; font-size: clamp(25px, 2.25vw, 36px); font-weight: 900; letter-spacing: -.055em; line-height: .92; text-transform: uppercase; }
