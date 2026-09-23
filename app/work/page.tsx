@@ -33,6 +33,17 @@ const projects = [
     alt: "B2B multi-brand design system interface overview",
     tone: "coral",
     href: null
+  },
+  {
+    number: "03",
+    discipline: "Responsive web · Sports",
+    title: "T20 cricket tournament hub",
+    summary: "將分散的賽事、新聞與延伸內容重新組織，建立資訊層級清楚、能持續探索的 T20 賽事專題入口。",
+    tags: ["Information Architecture", "UX", "UI Design", "Responsive"],
+    image: "/projects/t20-tournament-hub-cover-v2.webp",
+    alt: "T20 cricket tournament hub desktop and mobile interface overview",
+    tone: "red",
+    href: "/work/t20-cricket-tournament-hub"
   }
 ] as const;
 

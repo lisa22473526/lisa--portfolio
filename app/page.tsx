@@ -170,7 +170,7 @@ export default function HomePage() {
           </button>
         </div>
         <div className="hero__links">
-          <span>About</span>
+          <Link href="/about">About</Link>
           {navigation.map((item) => (
             <a href={item.href} key={item.href}>{item.label}</a>
           ))}

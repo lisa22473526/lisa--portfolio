@@ -1,18 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 type SiteHeaderProps = { alwaysVisible?: boolean; visible?: boolean; onHome?: boolean };
 
 export default function SiteHeader({ alwaysVisible = false, visible = false, onHome = false }: SiteHeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className={`global-nav${alwaysVisible || visible ? " global-nav--visible" : ""}`}>
       <Link className="global-nav__brand" href={onHome ? "#about" : "/"} aria-label="Lisa Huang, back to home">LISA<br />HUANG</Link>
       <nav className="global-nav__links" aria-label="Global navigation">
-        <span>About</span>
+        <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined}>About</Link>
         <Link href="/work">Work</Link>
         <a className="global-nav__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Let&apos;s talk <span className="arrow-motion">→</span></a>
       </nav>
@@ -23,7 +25,7 @@ export default function SiteHeader({ alwaysVisible = false, visible = false, onH
         <a className="global-nav__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Contact <span className="arrow-motion">→</span></a>
       </div>
       <nav className={`mobile-drawer${mobileMenuOpen ? " mobile-drawer--open" : ""}`} aria-label="Mobile navigation">
-        <div className="mobile-drawer__placeholder" aria-disabled="true">About</div>
+        <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined} onClick={() => setMobileMenuOpen(false)}>About</Link>
         <Link href="/work" onClick={() => setMobileMenuOpen(false)}>Work</Link>
         <span>Lisa Huang / Senior UI·UX Designer</span>
       </nav>
