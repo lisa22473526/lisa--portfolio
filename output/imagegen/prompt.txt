@@ -1,0 +1,3 @@
+Built-in imagegen used to generate the empty device mockup and minimal studio background.
+Prompt: Landscape 1536x1024 portfolio cover. Warm off-white studio background, soft shadows, frontal silver iMac and black iPhone with authentic proportions, blank screens, one small dark red cricket ball and subtle bat. No headings, labels or watermark.
+Screens composited deterministically using sharp from the supplied Fight map.png and Lobby_m.png. Uniform scaling and top viewport cropping only; no UI redrawing. iPhone frame approximately 227x478 pixels.

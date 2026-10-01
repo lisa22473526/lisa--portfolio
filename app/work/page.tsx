@@ -40,10 +40,21 @@ const projects = [
     title: "T20 cricket tournament hub",
     summary: "將分散的賽事、新聞與延伸內容重新組織，建立資訊層級清楚、能持續探索的 T20 賽事專題入口。",
     tags: ["Information Architecture", "UX", "UI Design", "Responsive"],
-    image: "/projects/t20-tournament-hub-cover-v2.webp",
+    image: "/projects/t20-tournament-hub-cover-v3.webp",
     alt: "T20 cricket tournament hub desktop and mobile interface overview",
     tone: "red",
     href: "/work/t20-cricket-tournament-hub"
+  },
+  {
+    number: "04",
+    discipline: "UI/UX design · iGaming",
+    title: "iGaming platform — Multi-brand UI",
+    summary: "同一博彩產品，三套客製化介面。以紅、綠、紫三種品牌風格，展示遊戲大廳、優惠與會員功能的跨裝置設計。",
+    tags: ["iGaming", "Multi-brand UI", "Customization", "Responsive"],
+    image: "/projects/igaming/cover-multi-brand.webp",
+    alt: "紅、綠、紫三套博彩平台客製化桌機與手機設計",
+    tone: "red",
+    href: "/work/igaming-platform"
   }
 ] as const;
 
@@ -78,6 +89,7 @@ export default function WorkPage() {
                 alt={project.alt}
                 fill
                 priority={project.number === "01"}
+                unoptimized={project.number === "03"}
                 sizes="(max-width: 760px) 100vw, 70vw"
               />
               <span className={styles.viewLabel}>View case study <span className="arrow-motion">↗︎</span></span>

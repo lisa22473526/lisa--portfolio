@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../../components/site-header";
+import ExperienceVideo from "./experience-video";
 import styles from "./t20-case-study.module.css";
 
 export const metadata: Metadata = {
@@ -132,23 +133,15 @@ export default function T20CricketTournamentHub() {
           <p>在桌機與手機上維持一致的內容優先順序，讓使用者都能輕鬆探索比賽、新聞與更深入的賽事內容。</p>
         </div>
 
-        <div className={styles.deviceStage} aria-label="Desktop and mobile video placeholders">
+        <div className={styles.deviceStage} aria-label="桌機與手機操作影片">
           <div className={styles.desktopMockup}>
             <div className={styles.desktopBar}><i /><i /><i /></div>
-            <div className={styles.videoPlaceholder}>
-              <span>桌機體驗</span>
-              <strong>影片預留位置</strong>
-              <small>16:9</small>
-            </div>
+            <ExperienceVideo src="/projects/project02/t20-desktop.mp4" poster="/projects/project02/t20-desktop-poster.webp" label="T20 桌機版操作展示" width={1512} height={736} />
           </div>
 
           <div className={styles.mobileMockup}>
             <div className={styles.mobileSpeaker} />
-            <div className={styles.videoPlaceholder}>
-              <span>手機體驗</span>
-              <strong>影片預留位置</strong>
-              <small>9:16</small>
-            </div>
+            <ExperienceVideo src="/projects/project02/t20-mobile.mp4" poster="/projects/project02/t20-mobile-poster.webp" label="T20 手機版操作展示" width={596} height={1298} />
           </div>
         </div>
       </section>

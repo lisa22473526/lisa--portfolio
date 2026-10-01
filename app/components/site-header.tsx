@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef } from "react";
 
 type SiteHeaderProps = { alwaysVisible?: boolean; visible?: boolean; onHome?: boolean };
 
 export default function SiteHeader({ alwaysVisible = false, visible = false, onHome = false }: SiteHeaderProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  const closeMenu = () => menuRef.current?.removeAttribute("open");
   const pathname = usePathname();
 
   return (
@@ -19,16 +20,23 @@ export default function SiteHeader({ alwaysVisible = false, visible = false, onH
         <a className="global-nav__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Let&apos;s talk <span className="arrow-motion">→</span></a>
       </nav>
       <div className="global-nav__mobile-actions">
-        <button className={`global-nav__menu-button${mobileMenuOpen ? " is-open" : ""}`} type="button" aria-label="Toggle menu" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen((open) => !open)}>
-          <span></span><span></span><span></span>
-        </button>
+        <details className="mobile-menu" ref={menuRef} onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            closeMenu();
+            menuRef.current?.querySelector("summary")?.focus();
+          }
+        }}>
+          <summary className="global-nav__menu-button" aria-label="Toggle menu" aria-controls="mobile-navigation">
+            <span></span><span></span><span></span>
+          </summary>
+          <nav id="mobile-navigation" className="mobile-drawer" aria-label="Mobile navigation">
+            <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined} onClick={closeMenu}>About</Link>
+            <Link href="/work" onClick={closeMenu}>Work</Link>
+            <span>Lisa Huang / Senior UI·UX Designer</span>
+          </nav>
+        </details>
         <a className="global-nav__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Contact <span className="arrow-motion">→</span></a>
       </div>
-      <nav className={`mobile-drawer${mobileMenuOpen ? " mobile-drawer--open" : ""}`} aria-label="Mobile navigation">
-        <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined} onClick={() => setMobileMenuOpen(false)}>About</Link>
-        <Link href="/work" onClick={() => setMobileMenuOpen(false)}>Work</Link>
-        <span>Lisa Huang / Senior UI·UX Designer</span>
-      </nav>
     </header>
   );
 }
