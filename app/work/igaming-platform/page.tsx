@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../../components/site-header";
+import CaseStudyTopline from "../../components/case-study-topline";
 import PortfolioFooter from "../../components/portfolio-footer";
 import styles from "./igaming.module.css";
 
@@ -33,7 +34,7 @@ export default function IGamingPlatform() {
   return <main className={styles.page}>
     <SiteHeader alwaysVisible />
     <header className={styles.hero}>
-      <div className={styles.topline}><Link href="/work">← Selected work / 04</Link><span>One product · Three visual identities</span></div>
+      <CaseStudyTopline number="04" context="One product · Three visual identities" />
       <p className={styles.kicker}>iGaming platform / Client customization</p>
       <h1>One platform.<span>Three expressions.</span></h1>
       <div className={styles.heroBottom}><p>同一博彩產品，三套客製化介面。<br />從品牌視覺到畫面編排，延伸不同客戶的產品樣貌。</p><span>RED / GREEN / PURPLE</span></div>

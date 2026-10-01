@@ -27,12 +27,12 @@ const projects = [
     number: "02",
     discipline: "Design system · B2B",
     title: "Multi-brand design system",
-    summary: "從零建立可延展的品牌系統與元件規範，打造廠商客製一鍵換色機制，提升設計與開發協作效率。",
+    summary: "運用 AI 整理既有色彩系統，建立 Design Tokens 與取代對照，支援跨部門開發與多品牌樣版。",
     tags: ["Design System", "Token", "Governance", "Handoff"],
-    image: "/projects/b2b-multi-brand-design-system-v2.webp",
+    image: "/projects/design-system/cover-v3.webp",
     alt: "B2B multi-brand design system interface overview",
     tone: "coral",
-    href: null
+    href: "/work/multi-brand-design-system"
   },
   {
     number: "03",
@@ -83,7 +83,7 @@ export default function WorkPage() {
               <span>{project.discipline}</span>
             </div>
 
-            {project.href ? <Link className={`${styles.visual} ${styles[project.tone]}`} href={project.href} aria-label={`View ${project.title} case study`}>
+            {<Link className={`${styles.visual} ${styles[project.tone]}`} href={project.href} aria-label={`View ${project.title} case study`}>
               <Image
                 src={project.image}
                 alt={project.alt}
@@ -93,10 +93,7 @@ export default function WorkPage() {
                 sizes="(max-width: 760px) 100vw, 70vw"
               />
               <span className={styles.viewLabel}>View case study <span className="arrow-motion">↗︎</span></span>
-            </Link> : <div className={`${styles.visual} ${styles[project.tone]}`}>
-              <Image src={project.image} alt={project.alt} fill sizes="(max-width: 760px) 100vw, 70vw" />
-              <span className={styles.viewLabel}>Coming soon</span>
-            </div>}
+            </Link>}
 
             <div className={styles.projectInfo}>
               <h2>{project.title}</h2>

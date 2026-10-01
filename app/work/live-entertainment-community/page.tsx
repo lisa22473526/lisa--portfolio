@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../../components/site-header";
+import CaseStudyTopline from "../../components/case-study-topline";
 import styles from "./case-study.module.css";
 
 export const metadata: Metadata = {
@@ -67,7 +68,7 @@ export default function LiveEntertainmentCaseStudy() {
       <SiteHeader alwaysVisible />
 
       <section className={styles.hero}>
-        <div className={styles.heroMeta}><span>[ 01 ]</span><span>Mobile product · B2C</span></div>
+        <CaseStudyTopline number="01" context="Mobile product · B2C" />
         <h1>Live entertainment<br /><em>community.</em></h1>
         <div className={styles.heroIntro}>
           <p>結合體育賽事直播、即時數據資訊與主播社群互動的一站式平台。</p>

@@ -319,3 +319,10 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .mobile-drawer, .global-nav__menu-button span { transition: none; }
 }
+
+/* Current location and keyboard focus are distinct navigation states. */
+.global-nav__links > a[aria-current] { color: var(--color-accent); text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 2px; }
+.global-nav__links > a:focus-visible, .mobile-drawer a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+@media (max-width: 680px) {
+  .mobile-drawer a[aria-current] { padding-inline: 12px; background: #111; color: #e8ff47; border-radius: 6px; border-bottom-color: transparent; }
+}

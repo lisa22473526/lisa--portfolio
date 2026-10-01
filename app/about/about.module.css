@@ -104,3 +104,9 @@ a.project:hover { border-color: var(--color-accent); }
 .navItems a:hover .navArrow, .navItems a:focus-visible .navArrow { background: var(--color-ink); color: var(--color-accent); transform: rotate(45deg); }
 @media (max-width: 640px) { .sectionNav { align-items: flex-start; gap: 12px; padding: 16px 0; } .navItems { width: 100%; gap: 8px; } .navItems a { flex: 1 1 auto; justify-content: space-between; gap: 8px; padding-left: 12px; } .navArrow { margin-left: 0; width: 22px; height: 22px; } }
 @media (prefers-reduced-motion: reduce) { .navItems a, .navArrow { transition: none; } }
+
+/* SVG arrows retain their shape across mobile system fonts. */
+.arrowIcon { display: inline-block; width: 1em; height: 1em; flex: 0 0 auto; vertical-align: -.12em; }
+.actions a { align-items: center; gap: 7px; }
+.projectLink .arrowIcon { margin-left: 4px; }
+.navArrow .arrowIcon { width: 16px; height: 16px; }

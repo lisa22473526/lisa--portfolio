@@ -28,12 +28,12 @@ const featuredWork = [
     number: "02",
     type: "Design system",
     title: "B2B Multi-Brand Design System",
-    result: "打造廠商客製一鍵換色的機制",
-    image: "/projects/b2b-multi-brand-design-system-v2.webp",
+    result: "AI 輔助整理色彩系統，延伸品牌樣版",
+    image: "/projects/design-system/cover-v3.webp",
     imageAlt: "B2B multi-brand design system project overview",
     imageWidth: 1536,
     imageHeight: 1024,
-    href: null,
+    href: "/work/multi-brand-design-system",
     className: "work-card--system"
   }
 ];

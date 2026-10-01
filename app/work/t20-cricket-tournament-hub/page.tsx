@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "../../components/site-header";
+import CaseStudyTopline from "../../components/case-study-topline";
 import ExperienceVideo from "./experience-video";
 import styles from "./t20-case-study.module.css";
 
@@ -25,7 +26,7 @@ export default function T20CricketTournamentHub() {
       <SiteHeader alwaysVisible />
 
       <section className={styles.hero} aria-labelledby="t20-title">
-        <p className={styles.eyebrow}>Sports platform · UI/UX design</p>
+        <CaseStudyTopline number="03" context="Sports platform · UI/UX design" />
         <div className={styles.heroTitle}>
           <h1 id="t20-title">T20 Cricket<br /><em>Tournament Hub</em></h1>
           <p>將賽事、新聞與 T20 重點內容集中在同一個入口，打造能持續探索的專屬賽事體驗。</p>

@@ -10,13 +10,14 @@ export default function SiteHeader({ alwaysVisible = false, visible = false, onH
   const menuRef = useRef<HTMLDetailsElement>(null);
   const closeMenu = () => menuRef.current?.removeAttribute("open");
   const pathname = usePathname();
+  const workCurrent = pathname === "/work" ? "page" : pathname.startsWith("/work/") ? "location" : undefined;
 
   return (
     <header className={`global-nav${alwaysVisible || visible ? " global-nav--visible" : ""}`}>
       <Link className="global-nav__brand" href={onHome ? "#about" : "/"} aria-label="Lisa Huang, back to home">LISA<br />HUANG</Link>
       <nav className="global-nav__links" aria-label="Global navigation">
         <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined}>About</Link>
-        <Link href="/work">Work</Link>
+        <Link href="/work" aria-current={workCurrent}>Work</Link>
         <a className="global-nav__contact" href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">Let&apos;s talk <span className="arrow-motion">→</span></a>
       </nav>
       <div className="global-nav__mobile-actions">
@@ -31,7 +32,7 @@ export default function SiteHeader({ alwaysVisible = false, visible = false, onH
           </summary>
           <nav id="mobile-navigation" className="mobile-drawer" aria-label="Mobile navigation">
             <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined} onClick={closeMenu}>About</Link>
-            <Link href="/work" onClick={closeMenu}>Work</Link>
+            <Link href="/work" aria-current={workCurrent} onClick={closeMenu}>Work</Link>
             <span>Lisa Huang / Senior UI·UX Designer</span>
           </nav>
         </details>

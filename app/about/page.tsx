@@ -4,6 +4,10 @@ import SiteHeader from "../components/site-header";
 import PortfolioFooter from "../components/portfolio-footer";
 import styles from "./about.module.css";
 
+function Arrow({ down = false }: { down?: boolean }) {
+  return <svg className={styles.arrowIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false"><path d={down ? "M5 5l14 14M5 19h14V5" : "M5 19L19 5M5 5h14v14"} /></svg>;
+}
+
 export const metadata: Metadata = {
   title: "About — Lisa Huang",
   description: "10 年以上設計經驗，結合前端背景、數據分析與 AI，從 B2C 產品體驗到 B2B 設計系統，讓複雜問題成為清楚、可落地的解決方案。",
@@ -29,7 +33,7 @@ export default function AboutPage() {
             <p className={styles.role}>Senior UI/UX Designer</p>
             <h2>從產品提案到設計落地，<br />讓複雜的體驗變得清楚。</h2>
             <p>擁有 10 年以上設計經驗，結合視覺設計與前端開發背景，專注 B2B／B2C 產品。擅長產品企劃、流程優化與設計系統，與 PM、工程師一起把需求轉化為可落地的方案。</p>
-            <div className={styles.actions}><Link href="/work">看作品 ↗</Link><a href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">聯絡我 ↗</a></div>
+            <div className={styles.actions}><Link href="/work">看作品 <Arrow /></Link><a href="https://www.linkedin.com/in/huang-jing-ying-439549198" target="_blank" rel="noreferrer">聯絡我 <Arrow /></a></div>
           </div>
           <aside className={styles.summary} aria-label="專業摘要">
             <p className={styles.label}>Expertise at a glance</p>
@@ -45,16 +49,16 @@ export default function AboutPage() {
         <nav className={styles.sectionNav} aria-label="About 頁面章節">
           <span className={styles.navCaption}>Explore my story</span>
           <div className={styles.navItems}>
-            <a href="#impact"><span className={styles.navNumber}>01</span><span>代表成果</span><span className={styles.navArrow} aria-hidden="true">↘</span></a>
-            <a href="#experience"><span className={styles.navNumber}>02</span><span>工作經歷</span><span className={styles.navArrow} aria-hidden="true">↘</span></a>
-            <a href="#background"><span className={styles.navNumber}>03</span><span>學歷與關於我</span><span className={styles.navArrow} aria-hidden="true">↘</span></a>
+            <a href="#impact"><span className={styles.navNumber}>01</span><span>代表成果</span><span className={styles.navArrow} aria-hidden="true"><Arrow down /></span></a>
+            <a href="#experience"><span className={styles.navNumber}>02</span><span>工作經歷</span><span className={styles.navArrow} aria-hidden="true"><Arrow down /></span></a>
+            <a href="#background"><span className={styles.navNumber}>03</span><span>學歷與關於我</span><span className={styles.navArrow} aria-hidden="true"><Arrow down /></span></a>
           </div>
         </nav>
 
         <section className={styles.proof} id="impact" aria-labelledby="proof-title">
           <div className={styles.sectionHeading}><h2 id="proof-title">代表成果</h2><span>Selected impact</span></div>
           <div className={styles.projects}>
-            <Link className={styles.project} href="/work/live-entertainment-community"><div><span className={styles.label}>B2C / 直播互動產品</span><strong>+21% <small>人均觀看時長</small></strong></div><p>優化沉浸式觀賽體驗，並檢視互動下降的設計取捨。</p><span className={styles.projectLink}>閱讀案例 ↗</span></Link>
+            <Link className={styles.project} href="/work/live-entertainment-community"><div><span className={styles.label}>B2C / 直播互動產品</span><strong>+21% <small>人均觀看時長</small></strong></div><p>優化沉浸式觀賽體驗，並檢視互動下降的設計取捨。</p><span className={styles.projectLink}>閱讀案例 <Arrow /></span></Link>
             <article className={styles.project}><div><span className={styles.label}>B2B / 多品牌設計系統</span><strong>0 → 1 <small>設計系統建立</small></strong></div><p>建立共用元件與品牌換色機制，提升設計、開發協作效率。</p><span className={styles.projectLink}>Design Tokens / Brand Themes</span></article>
           </div>
         </section>
